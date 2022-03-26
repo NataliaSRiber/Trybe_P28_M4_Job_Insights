@@ -11,7 +11,6 @@ def read(path):
         for row in jobs_reader:
             rows.append(row)
     return rows
-
 # Fonte: https://docs.python.org/pt-br/3/library/
 # csv.html
 # Fonte: https://www.analyticsvidhya.com/blog/2021/
