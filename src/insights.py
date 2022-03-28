@@ -74,19 +74,14 @@ def matches_salary_range(job, salary):
         return (salary <= job["max_salary"] and salary >= job["min_salary"])
 
 
+# Para esta parte consultei o repositorio de Milena Leme
+# https://github.com/tryber/sd-013-c-project-job-insights/pull/117/commits/2721b303153a9d7fc87012e3deed54e1c122e4fe
 def filter_by_salary_range(jobs, salary):
-    """Filters a list of jobs by salary range
-
-    Parameters
-    ----------
-    jobs : list
-        The jobs to be filtered
-    salary : int
-        The salary to be used as filter
-
-    Returns
-    -------
-    list
-        Jobs whose salary range contains `salary`
-    """
-    return []
+    salary_list = []
+    for job in jobs:
+        try:
+            if matches_salary_range(job, salary):
+                salary_list.append(job)
+        except ValueError:
+            pass
+    return salary_list
